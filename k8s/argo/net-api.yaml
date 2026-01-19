@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/CFBNCR/ApiImagenesTarjetas.git
+    repoURL: https://github.com/jqfelipe/net-argo-example.git
     targetRevision: dev
     path: k8s
   destination:
@@ -17,4 +17,5 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
+
       - CreateNamespace=true
