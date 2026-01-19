@@ -1,0 +1,13 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: imagen-tarjeta-api-service
+spec:
+  selector:
+    app: imagen-tarjeta-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer # Cambia a ClusterIP si solo es interno
