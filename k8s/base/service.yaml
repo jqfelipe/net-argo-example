@@ -9,5 +9,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80
-  type: LoadBalancer # Cambia a ClusterIP si solo es interno
+      targetPort: 8080
+  type: ClusterIP # Cambia a ClusterIP si solo es interno / LoadBalancer
+
+
