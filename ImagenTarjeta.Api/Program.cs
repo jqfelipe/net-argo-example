@@ -19,15 +19,19 @@ namespace ImagenTarjeta.Api
             builder.Services.AddSwaggerGen();
             builder.Services.Configure<List<TarjetaMapping>>(builder.Configuration.GetSection("Mapping"));
             builder.Services.AddScoped<ITarjetasService, TarjetaService>();
+            builder.Services.AddHealthChecks();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.MapHealthChecks("/health");
+
+            //// Configure the HTTP request pipeline.
+            //if (app.Environment.IsDevelopment())
+            //{
+
+            //}
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 
