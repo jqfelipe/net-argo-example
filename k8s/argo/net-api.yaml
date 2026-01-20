@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/jqfelipe/net-argo-example.git
     targetRevision: dev
-    path: k8s
+    path: base
   destination:
     server: https://kubernetes.default.svc
     namespace: default
@@ -19,3 +19,4 @@ spec:
     syncOptions:
 
       - CreateNamespace=true
+
