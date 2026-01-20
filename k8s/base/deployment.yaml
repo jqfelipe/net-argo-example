@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: imagen-tarjeta-api
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: imagen-tarjeta-api
@@ -13,6 +13,8 @@ spec:
       labels:
         app: imagen-tarjeta-api
     spec:
+      imagePullSecrets:
+        - name: acr-pull-secret
       containers:
         - name: imagen-tarjeta-api
           image: arqcontainerregbncr.azurecr.io/api-imagen-tarjetas:latest
@@ -40,3 +42,6 @@ spec:
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
+
+
+
