@@ -19,10 +19,12 @@ spec:
         - name: imagen-tarjeta-api
           image: arqcontainerregbncr.azurecr.io/api-imagen-tarjetas:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Production"
+            - name: ASPNETCORE_URLS
+              value: http://+:8080
           resources:
             requests:
               cpu: "250m"
@@ -42,6 +44,7 @@ spec:
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
+
 
 
 
