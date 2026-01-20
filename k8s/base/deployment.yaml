@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: imagen-tarjeta-api
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: imagen-tarjeta-api
@@ -42,5 +42,6 @@ spec:
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
+
 
 
